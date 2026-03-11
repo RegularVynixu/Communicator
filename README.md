@@ -29,6 +29,7 @@ Only clients using the same frequency will receive messages.
 
 ```lua
 Communicator:Send("Test")
+
 Communicator:Send("RandomNumber", math.random(1, 100))
 ```
 Arguments are serialized using JSON.
