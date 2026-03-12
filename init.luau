@@ -45,9 +45,14 @@ function Communicator:Listen(command: string, callback: (Player, ...any?) -> ())
 	Internal.Callbacks[command] = callback
 end
 
-function Communicator:Ping(timeOut: number): { Player }
+function Communicator:Ping(timeOut: number, includeSelf: boolean?): { Player }
 	timeOut = timeOut or 1
+	includeSelf = includeSelf == true
+
 	local responders = {} :: { Player }
+	if includeSelf then
+		responders[1] = LocalPlayer
+	end
 
 	if #Players:GetPlayers() > 1 then
 		local t = tick()
