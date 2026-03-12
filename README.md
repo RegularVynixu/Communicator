@@ -14,6 +14,7 @@ A lightweight client-to-client communication module for Roblox built on top of T
 - Both clients must have access to Roblox chat
 - Arguments are limited to types that can be JSON-encoded (`string`, `number`, `boolean`)
 - Not true peer-to-peer (messages still relay through Roblox servers)
+- Roblox chat imposes a cooldown on message sending, so spamming commands too fast may fail
 - Any client or exploit that can send messages with the correct frequency and format can inject or spoof commands
 
 ## Usage
